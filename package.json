@@ -1,0 +1,36 @@
+{
+    "name": "china-regions-ts",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "update": "ts-node src/update.ts",
+        "lint": "eslint . --fix",
+        "test": "jest",
+        "prepack": "yarn lint && tsc"
+    },
+    "devDependencies": {
+        "@types/node": "*",
+        "@types/jest": "*",
+        "@faasjs/request": "beta",
+        "typescript": "*",
+        "ts-node": "*",
+        "@faasjs/eslint-config-recommended": "beta",
+        "jest": "*",
+        "ts-jest": "*"
+    },
+    "eslintConfig": {
+        "ignorePatterns": ["lib"],
+        "extends": [
+          "@faasjs/recommended"
+        ]
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testRegex": "/*\\.test\\.ts$"
+    }
+}
